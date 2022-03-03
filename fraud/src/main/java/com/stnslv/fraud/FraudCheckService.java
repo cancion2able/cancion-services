@@ -7,7 +7,9 @@ import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
-public record FraudCheckService(FraudCheckHistoryRepository repository) {
+public class FraudCheckService {
+
+    private final FraudCheckHistoryRepository repository;
 
     public boolean isFraudulentCustomer(Integer customerId) {
         repository.save(
